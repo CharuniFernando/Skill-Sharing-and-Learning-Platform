@@ -1,12 +1,18 @@
-**use the provided credentials only for testing**
 
-test users- user1
-	     user1234
+Run backend:
+	PafBackend\src\main\resources\application.yml >>> Run
 
-PafBackend\src\main\resources\application.yml 
+Run Frontend:
+	npm i
+	npm start
 
-mongodb:
-      uri: mongodb+srv://paf:paf146@paf.jbtew.mongodb.net/
+Test User:
+	elina silva
+	elina123
+
+	kevin perera
+	kevin123
+
 
 Frontend\src\firebaseConfig.js
 
