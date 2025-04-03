@@ -20,18 +20,21 @@ public class MediaController {
         this.mediaRepository = mediaRepository;
     }
 
+    // GET: Retrieve a Media by ID 
     @GetMapping("/{postId}")
     public ResponseEntity<List<Media>> getMediaByPostId(@PathVariable String postId) {
         List<Media> mediaList = mediaRepository.findByPostId(postId);
         return new ResponseEntity<>(mediaList, HttpStatus.OK);
     }
 
+    // POST: Create a new Media
     @PostMapping
     public ResponseEntity<Media> createMedia(@RequestBody Media media) {
         Media savedMedia = mediaRepository.save(media);
         return new ResponseEntity<>(savedMedia, HttpStatus.CREATED);
     }
 
+    //DELETE : Delete a Media by ID
     @DeleteMapping("/{mediaId}")
     public ResponseEntity<Void> deleteMedia(@PathVariable String mediaId) {
         mediaRepository.deleteById(mediaId);
