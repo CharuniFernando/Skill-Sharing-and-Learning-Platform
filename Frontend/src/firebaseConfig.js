@@ -9,7 +9,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyCjuWxp-qbmDPJj0JePxhzB66gzJAPmcLI",
   authDomain: "skill-sharing-platform-df39d.firebaseapp.com",
   projectId: "skill-sharing-platform-df39d",
-  storageBucket: "skill-sharing-platform-df39d.firebasestorage.app",
+  storageBucket: "skill-sharing-platform-df39d.appspot.com",
   messagingSenderId: "6810545495",
   appId: "1:6810545495:web:7ab740cecf22bc62dd6212",
 };
