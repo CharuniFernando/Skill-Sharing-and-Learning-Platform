@@ -5,6 +5,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
+
 // Your Firebase config details (project specific details)
 const firebaseConfig = {
   apiKey: "AIzaSyCjuWxp-qbmDPJj0JePxhzB66gzJAPmcLI",  // apiKey
