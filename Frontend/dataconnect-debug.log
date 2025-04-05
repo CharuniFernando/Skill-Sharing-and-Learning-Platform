@@ -1,0 +1,10 @@
+I0405 09:14:44.785139     288 load.go:37] Reloading schema and connectors...
+I0405 09:14:44.837089     288 control.go:71] [/emulator/frontend 7acc] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1233B] connector\queries.gql [1802B] 
+I0405 09:14:44.875700     288 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "C:\\Users\\charu\\Desktop\\PAF Project\\Skill-Sharing-and-Learning-Platform\\Frontend\\dataconnect-generated\\js\\default-connector"
+I0405 09:14:44.883678     288 collector.go:107] schema extensions wrote into "C:\\Users\\charu\\Desktop\\PAF Project\\Skill-Sharing-and-Learning-Platform\\Frontend\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [67159B] 
+I0405 09:14:44.888666     288 collector.go:107] connector "default" javascriptSdk wrote into "C:\\Users\\charu\\Desktop\\PAF Project\\Skill-Sharing-and-Learning-Platform\\Frontend\\dataconnect-generated\\js\\default-connector"
+Generated sources: index.d.ts [246B] esm\package.json [17B] package.json [860B] react\index.d.ts [228B] react\esm\package.json [17B] react\index.cjs.js [0B] react\esm\index.esm.js [0B] react\README.md [5417B] esm\index.esm.js [111B] index.cjs.js [146B] README.md [2774B] react\package.json [468B] 
+I0405 09:14:44.913806     288 installsdk.go:80] Running command: C:\Program Files\nodejs\npm.cmd install file:dataconnect-generated\js\default-connector
