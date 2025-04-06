@@ -13,7 +13,7 @@ spring:
     active: dev
   data:
     mongodb:
-      uri: mongodb+srv://charunifernando:BDaqdVK7hYY4PTBl@cluster0.e7hzlga.mongodb.net/
+      uri: //charunifernando:BDaqdVK7hYY4PTBl@cluster0.e7hzlga.mongodb.net/
       database: ${MONGODB_DB}
 
   security:
