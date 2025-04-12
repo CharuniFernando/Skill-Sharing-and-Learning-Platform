@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -21,3 +22,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+=======
+
+/Skill Sharing Learning Platform
+Frontend/storage/
+node_module/
+.cache/
+*.log
+node_modules/
+>>>>>>> 5205d6431d5c5076e1a6de5e22b3b2a67b73cd62

@@ -1,3 +1,6 @@
 
 /Skill Sharing Learning Platform
 Frontend/storage/
+node_module/
+.cache/
+*.log
