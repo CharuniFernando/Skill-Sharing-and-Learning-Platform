@@ -27,7 +27,7 @@ public class MediaController {
         return new ResponseEntity<>(mediaList, HttpStatus.OK);
     }
 
-    
+
     // POST: Create a new media
     @PostMapping
     public ResponseEntity<Media> createMedia(@RequestBody Media media) {
@@ -35,6 +35,7 @@ public class MediaController {
         return new ResponseEntity<>(savedMedia, HttpStatus.CREATED);
     }
 
+    // DELETE: Delete a media by ID
     @DeleteMapping("/{mediaId}")
     public ResponseEntity<Void> deleteMedia(@PathVariable String mediaId) {
         mediaRepository.deleteById(mediaId);
