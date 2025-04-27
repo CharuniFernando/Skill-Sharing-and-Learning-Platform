@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/media")
+@RestController //return data
+@RequestMapping("/api/media") //base URL or base path
 public class MediaController {
 
+    //autowired repository and inject constructor
     private final MediaRepository mediaRepository;
 
     @Autowired
@@ -20,6 +21,7 @@ public class MediaController {
         this.mediaRepository = mediaRepository;
     }
 
+    //API endpoints
     // GET: Retrieve all media with user details populated
     @GetMapping("/{postId}")
     public ResponseEntity<List<Media>> getMediaByPostId(@PathVariable String postId) {
