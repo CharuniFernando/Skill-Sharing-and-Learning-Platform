@@ -27,7 +27,7 @@ public class SkillShareController {
     @GetMapping
     public ResponseEntity<List<SkillShare>> getMealPlans() {
         List<SkillShare> mealPlans = mealPlanRepository.findAll();
-        return new ResponseEntity<>(mealPlans, HttpStatus.OK);
+        return new ResponseEntity<>(mealPlans, HttpStatus.OK); //HttpStatus.OK 200 - success
     }
     
     // GET: Retrieve a Post by ID with User details populated
@@ -41,13 +41,13 @@ public class SkillShareController {
     @PostMapping
     public ResponseEntity<SkillShare> createMealPlan(@RequestBody SkillShare mealPlan) {
         SkillShare savedMealPlan = mealPlanRepository.save(mealPlan);
-        return new ResponseEntity<>(savedMealPlan, HttpStatus.CREATED);
+        return new ResponseEntity<>(savedMealPlan, HttpStatus.CREATED); //HttpStatus.CREATED 201 - response
     }
     
     @DeleteMapping("/{mealPlanId}")
     public ResponseEntity<Void> deleteMealPlan(@PathVariable String mealPlanId) {
         mealPlanRepository.deleteById(mealPlanId);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT); //HttpStatus.NO_CONTENT 204 - send status without response body
     }
     
     // DELETE: Delete a Post by ID
