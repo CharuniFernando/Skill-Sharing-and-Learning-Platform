@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/posts")
+@RestController //return data
+@RequestMapping("/api/posts") ////base URL or base path
 public class PostController {
 
+    //autowired repository and inject constructor
     private final PostRepository postRepository;
 
     @Autowired
@@ -20,7 +21,7 @@ public class PostController {
         this.postRepository = postRepository;
     }
 
-
+    //API endpoints
     // GET: Retrieve all Post with User details populated
     @GetMapping
     public ResponseEntity<List<Post>> getPosts() {
