@@ -29,7 +29,6 @@ public class MediaController {
         return new ResponseEntity<>(mediaList, HttpStatus.OK);
     }
 
-
     // POST: Create a new media
     @PostMapping
     public ResponseEntity<Media> createMedia(@RequestBody Media media) {
