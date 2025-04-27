@@ -20,13 +20,14 @@ public class MediaController {
         this.mediaRepository = mediaRepository;
     }
 
-    // GET: Retrieve all media with Post details populated
+    // GET: Retrieve all media with user details populated
     @GetMapping("/{postId}")
     public ResponseEntity<List<Media>> getMediaByPostId(@PathVariable String postId) {
         List<Media> mediaList = mediaRepository.findByPostId(postId);
         return new ResponseEntity<>(mediaList, HttpStatus.OK);
     }
 
+    // GET: Retrieve a media by ID with user details populated
     @PostMapping
     public ResponseEntity<Media> createMedia(@RequestBody Media media) {
         Media savedMedia = mediaRepository.save(media);
