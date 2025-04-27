@@ -71,7 +71,7 @@ const Header = () => {
           Discover endless possibilities, from programming and painting to baking, gardening, and beyond.
           Become a member today to learn new skills or inspire others by sharing your passion!
           Connect with a community of creators, innovators, and learners just like you, and unlock your true potential.
-          Every journey starts with a single step — take yours today and start building your future!
+          Every journey starts with a single step - take yours today and start building your future!
           </p>
           <div className="header__btn">
             <button
