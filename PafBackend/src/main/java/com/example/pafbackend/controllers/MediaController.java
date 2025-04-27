@@ -27,7 +27,8 @@ public class MediaController {
         return new ResponseEntity<>(mediaList, HttpStatus.OK);
     }
 
-    // GET: Retrieve a media by ID with user details populated
+    
+    // POST: Create a new media
     @PostMapping
     public ResponseEntity<Media> createMedia(@RequestBody Media media) {
         Media savedMedia = mediaRepository.save(media);
