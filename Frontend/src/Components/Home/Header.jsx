@@ -68,7 +68,10 @@ const Header = () => {
           <h4>Learn New Skills &</h4>
           <h1 className="section__header">Empower Yourself!</h1>
           <p>
-            Explore a wide range of skills, from coding to cooking, photography, DIY crafts, and more. Join today and start learning or sharing your expertise with others.
+          Discover endless possibilities, from programming and painting to baking, gardening, and beyond.
+          Become a member today to learn new skills or inspire others by sharing your passion!
+          Connect with a community of creators, innovators, and learners just like you, and unlock your true potential.
+          Every journey starts with a single step — take yours today and start building your future!
           </p>
           <div className="header__btn">
             <button
