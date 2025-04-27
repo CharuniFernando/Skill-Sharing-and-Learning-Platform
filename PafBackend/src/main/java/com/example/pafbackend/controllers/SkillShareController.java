@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/mealPlans")
+@RestController //return data
+@RequestMapping("/api/mealPlans") //base URL or base path
 public class SkillShareController {
     
+    //autowired repository and inject constructor
     private final SkillShareRepository mealPlanRepository;
     
     @Autowired
@@ -20,18 +21,23 @@ public class SkillShareController {
         this.mealPlanRepository = mealPlanRepository;
     }
     
+
+    //API endpoints
+    // GET: Retrieve all Post with User details populated
     @GetMapping
     public ResponseEntity<List<SkillShare>> getMealPlans() {
         List<SkillShare> mealPlans = mealPlanRepository.findAll();
         return new ResponseEntity<>(mealPlans, HttpStatus.OK);
     }
     
+    // GET: Retrieve a Post by ID with User details populated
     @GetMapping("/{userId}")
     public ResponseEntity<List<SkillShare>> getMealPlansByUserId(@PathVariable String userId) {
         List<SkillShare> mealPlans = mealPlanRepository.findByUserId(userId);
         return new ResponseEntity<>(mealPlans, HttpStatus.OK);
     }
     
+    // POST: Create a new Post
     @PostMapping
     public ResponseEntity<SkillShare> createMealPlan(@RequestBody SkillShare mealPlan) {
         SkillShare savedMealPlan = mealPlanRepository.save(mealPlan);
@@ -44,6 +50,7 @@ public class SkillShareController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
     
+    // DELETE: Delete a Post by ID
     @PutMapping("/{mealPlanId}")
     public ResponseEntity<SkillShare> updateMealPlan(@PathVariable String mealPlanId, @RequestBody SkillShare updatedMealPlan) {
         // Check if the Skill Share with the given ID exists
