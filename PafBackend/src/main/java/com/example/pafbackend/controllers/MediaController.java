@@ -26,20 +26,20 @@ public class MediaController {
     @GetMapping("/{postId}")
     public ResponseEntity<List<Media>> getMediaByPostId(@PathVariable String postId) {
         List<Media> mediaList = mediaRepository.findByPostId(postId);
-        return new ResponseEntity<>(mediaList, HttpStatus.OK);
-    }
+        return new ResponseEntity<>(mediaList, HttpStatus.OK); //HttpStatus.OK 200 - success
+    } 
 
     // POST: Create a new media
     @PostMapping
     public ResponseEntity<Media> createMedia(@RequestBody Media media) {
         Media savedMedia = mediaRepository.save(media);
-        return new ResponseEntity<>(savedMedia, HttpStatus.CREATED);
+        return new ResponseEntity<>(savedMedia, HttpStatus.CREATED); //HttpStatus.CREATED 201 - response
     }
 
     // DELETE: Delete a media by ID
     @DeleteMapping("/{mediaId}")
     public ResponseEntity<Void> deleteMedia(@PathVariable String mediaId) {
         mediaRepository.deleteById(mediaId);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT); //HttpStatus.NO_CONTENT 204 - send status without response body
     }
 }
