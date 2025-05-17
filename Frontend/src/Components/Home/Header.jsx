@@ -68,10 +68,7 @@ const Header = () => {
           <h4>Learn New Skills &</h4>
           <h1 className="section__header">Empower Yourself!</h1>
           <p>
-          Discover endless possibilities, from programming and painting to baking, gardening, and beyond.
-          Become a member today to learn new skills or inspire others by sharing your passion!
-          Connect with a community of creators, innovators, and learners just like you, and unlock your true potential.
-          Every journey starts with a single step - take yours today and start building your future!
+          Discover new passions or level up your skills in everything from tech and design to crafts and cooking. Whether you're here to learn or to teach, our Skill Share app connects you with a supportive community that grows together. Share your knowledge, spark your creativity, and be inspired every day.
           </p>
           <div className="header__btn">
             <button
