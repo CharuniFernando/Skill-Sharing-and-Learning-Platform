@@ -84,7 +84,7 @@ const Header = () => {
               }}
               className="btn"
             >
-              Join Today
+              Join Now
             </button>
           </div>
         </div>
