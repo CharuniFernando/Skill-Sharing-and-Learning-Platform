@@ -223,36 +223,47 @@ const CreateStoryModal = () => {
           />
         </Form.Item>
 
-       <Form.Item
-  label="Exercise Type"
-  name="exerciseType"
-  rules={[{ required: true, message: 'Please select an exercise type!' }]}
->
-  <Select
-    placeholder="Select Exercise Type"
-    value={formData.exerciseType}
-    onChange={(value) =>
-      handleInputChange({ target: { name: "exerciseType", value } })
-    }
-  >
-    <Select.Option value="reading">Reading</Select.Option>
-    <Select.Option value="watching-lectures">Watching Lectures</Select.Option>
-    <Select.Option value="practicing-problems">Practicing Problems</Select.Option>
-    <Select.Option value="writing-notes">Writing Notes</Select.Option>
-    <Select.Option value="coding">Coding Exercises</Select.Option>
-    <Select.Option value="math">Solving Math Problems</Select.Option>
-    <Select.Option value="podcasts">Listening to Podcasts</Select.Option>
-    <Select.Option value="discussions">Group Discussions</Select.Option>
-    <Select.Option value="speaking">Speaking Practice</Select.Option>
-    <Select.Option value="reviewing">Reviewing Past Material</Select.Option>
-    <Select.Option value="research">Research Work</Select.Option>
-    <Select.Option value="mindfulness">Mindfulness / Focus Training</Select.Option>
-    <Select.Option value="assignments">Assignment Work</Select.Option>
-    <Select.Option value="quizzes">Quiz Practice</Select.Option>
-    <Select.Option value="learning-games">Learning Games</Select.Option>
-  </Select>
-</Form.Item>
-
+        <Form.Item
+          label="Exercise Type"
+          name="exerciseType"
+          rules={[
+            { required: true, message: "Please select an exercise type!" },
+          ]}
+        >
+          <Select
+            placeholder="Select Exercise Type"
+            value={formData.exerciseType}
+            onChange={(value) =>
+              handleInputChange({ target: { name: "exerciseType", value } })
+            }
+          >
+            <Select.Option value="reading">Reading</Select.Option>
+            <Select.Option value="watching-lectures">
+              Watching Lectures
+            </Select.Option>
+            <Select.Option value="practicing-problems">
+              Practicing Problems
+            </Select.Option>
+            <Select.Option value="writing-notes">Writing Notes</Select.Option>
+            <Select.Option value="coding">Coding Exercises</Select.Option>
+            <Select.Option value="math">Solving Math Problems</Select.Option>
+            <Select.Option value="podcasts">
+              Listening to Podcasts
+            </Select.Option>
+            <Select.Option value="discussions">Group Discussions</Select.Option>
+            <Select.Option value="speaking">Speaking Practice</Select.Option>
+            <Select.Option value="reviewing">
+              Reviewing Past Material
+            </Select.Option>
+            <Select.Option value="research">Research Work</Select.Option>
+            <Select.Option value="mindfulness">
+              Mindfulness / Focus Training
+            </Select.Option>
+            <Select.Option value="assignments">Assignment Work</Select.Option>
+            <Select.Option value="quizzes">Quiz Practice</Select.Option>
+            <Select.Option value="learning-games">Learning Games</Select.Option>
+          </Select>
+        </Form.Item>
 
         <Form.Item
           label="Time Duration"
