@@ -4,6 +4,7 @@ import { useSnapshot } from "valtio";
 import state from "../../Utils/Store";
 import axios from "axios";
 import { Button, List, Avatar, Card } from "antd";
+
 const FriendsSection = () => {
   const snap = useSnapshot(state);
   const [friends, setFriends] = useState([]);
@@ -37,8 +38,11 @@ const FriendsSection = () => {
         }
         setFriends(friends);
       })
-      .catch((err) => {});
+      .catch((err) => {
+        console.error("Error fetching friends:", err);
+      });
   }, []);
+
   const unfriend = async (friendId) => {
     try {
       await UserConnectionService.deleteUserConnection(
@@ -52,13 +56,18 @@ const FriendsSection = () => {
       console.error("Error unfriending:", error);
     }
   };
+
   return (
     <div>
       <List
         dataSource={friends}
         renderItem={(friend) => (
           <Card
-            style={{ background: "#afdae0", color: "white" }}
+            style={{
+              background: "#afdae0",
+              color: "white",
+              marginBottom: "16px", // ✅ Adds margin between friend cards
+            }}
             bordered={false}
             key={friend.id}
           >
@@ -66,7 +75,7 @@ const FriendsSection = () => {
               actions={[
                 <Button
                   type="primary"
-                  danger
+                  style={{ backgroundColor: "#d00e0e" }}
                   onClick={() => unfriend(friend.id)}
                 >
                   Unfriend
@@ -74,13 +83,22 @@ const FriendsSection = () => {
               ]}
             >
               <List.Item.Meta
-                style={{ color: "black", fontSize: "16px" }}
                 avatar={<Avatar src={friend.image} size={64} />}
                 title={
-                  <span style={{ color: "black" }}>{friend.username}</span>
+                  <span
+                    style={{
+                      color: "black",
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {friend.username}
+                  </span>
                 }
                 description={
-                  <span style={{ color: "black" }}>{friend.biography}</span>
+                  <span style={{ color: "black", fontSize: "14px" }}>
+                    {friend.biography}
+                  </span>
                 }
               />
             </List.Item>
