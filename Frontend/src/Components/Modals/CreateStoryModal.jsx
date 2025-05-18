@@ -133,22 +133,22 @@ const CreateStoryModal = () => {
         state.createWorkoutStatusModalOpened = false;
       }}
       width={600}
-      bodyStyle={{ 
-        padding: '20px', 
-        backgroundColor: '#f5f5f5',
-        borderRadius: '8px'
+      bodyStyle={{
+        padding: "20px",
+        backgroundColor: "#f5f5f5",
+        borderRadius: "8px",
       }}
       footer={[
-        <div 
-          key="actionButtons" 
-          style={{ 
-            display: 'flex', 
-            justifyContent: 'space-between',
-            marginTop: '10px'
+        <div
+          key="actionButtons"
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            marginTop: "10px",
           }}
         >
-          <Button 
-            key="cancel" 
+          <Button
+            key="cancel"
             onClick={() => (state.createWorkoutStatusModalOpened = false)}
           >
             Cancel
@@ -161,40 +161,46 @@ const CreateStoryModal = () => {
           >
             Create
           </Button>
-        </div>
+        </div>,
       ]}
     >
-      <Form 
-        form={form} 
+      <Form
+        form={form}
         layout="vertical"
-        style={{ 
-          display: 'flex', 
-          flexDirection: 'column', 
-          gap: '15px' 
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "15px",
         }}
       >
         {uploadedImage && (
-          <div style={{ 
-            maxHeight: 400, 
-            marginBottom: "1rem",
-            borderRadius: '8px', 
-            overflow: 'hidden',
-            boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
-          }}>
+          <div
+            style={{
+              maxHeight: 400,
+              marginBottom: "1rem",
+              borderRadius: "8px",
+              overflow: "hidden",
+              boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+            }}
+          >
             <img
-              style={{ 
-                width: "100%", 
-                height: "auto", 
+              style={{
+                width: "100%",
+                height: "auto",
                 maxHeight: 400,
-                objectFit: 'cover'
+                objectFit: "cover",
               }}
               src={uploadedImage}
               alt="Learning Plan"
             />
           </div>
         )}
-        
-        <Form.Item label="Title" name="title" rules={[{ required: true, message: 'Please input a title' }]}>
+
+        <Form.Item
+          label="Title"
+          name="title"
+          rules={[{ required: true, message: "Please input a title" }]}
+        >
           <Input
             placeholder="Title"
             name="title"
@@ -202,16 +208,21 @@ const CreateStoryModal = () => {
             onChange={handleInputChange}
           />
         </Form.Item>
-        
+
         <Form.Item label="Timestamp" name="timestamp">
           <DatePicker
             placeholder="Timestamp"
             style={{ width: "100%" }}
             value={formData.timestamp}
             onChange={handleDateChange}
+            disabledDate={(current) => {
+              const today = new Date();
+              today.setHours(0, 0, 0, 0); // Strip time to compare dates properly
+              return current && current.toDate() < today;
+            }}
           />
         </Form.Item>
-        
+
         <Form.Item label="Exercise Type" name="exerciseType">
           <Input
             placeholder="Exercise Type"
@@ -220,25 +231,27 @@ const CreateStoryModal = () => {
             onChange={handleInputChange}
           />
         </Form.Item>
-        
-        <Form.Item 
-          label="Time Duration" 
+
+        <Form.Item
+          label="Time Duration"
           name="timeDuration"
           style={{ marginBottom: 0 }}
         >
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: '10px',
-            backgroundColor: 'white',
-            padding: '15px',
-            borderRadius: '8px'
-          }}>
-            <ClockCircleOutlined 
-              style={{ 
-                fontSize: '24px', 
-                color: getIntensityColor(formData.timeDuration) 
-              }} 
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              backgroundColor: "white",
+              padding: "15px",
+              borderRadius: "8px",
+            }}
+          >
+            <ClockCircleOutlined
+              style={{
+                fontSize: "24px",
+                color: getIntensityColor(formData.timeDuration),
+              }}
             />
             <div style={{ flex: 1 }}>
               <Slider
@@ -256,12 +269,12 @@ const CreateStoryModal = () => {
                 tipFormatter={(value) => `${value} min`}
               />
             </div>
-            <Text 
-              strong 
-              style={{ 
+            <Text
+              strong
+              style={{
                 color: getIntensityColor(formData.timeDuration),
-                minWidth: '50px',
-                textAlign: 'right'
+                minWidth: "50px",
+                textAlign: "right",
               }}
             >
               {formData.timeDuration} min
@@ -278,38 +291,48 @@ const CreateStoryModal = () => {
             suffixIcon={<FireOutlined />}
           >
             <Option value="No Efforts">
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <FireOutlined style={{ color: '#52c41a', marginRight: '8px' }} />
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <FireOutlined
+                  style={{ color: "#52c41a", marginRight: "8px" }}
+                />
                 No Efforts
               </div>
             </Option>
             <Option value="Mid Efforts">
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <FireOutlined style={{ color: '#1890ff', marginRight: '8px' }} />
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <FireOutlined
+                  style={{ color: "#1890ff", marginRight: "8px" }}
+                />
                 Mid Efforts
               </div>
             </Option>
             <Option value="Moderate Efforts">
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <FireOutlined style={{ color: '#faad14', marginRight: '8px' }} />
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <FireOutlined
+                  style={{ color: "#faad14", marginRight: "8px" }}
+                />
                 Moderate Efforts
               </div>
             </Option>
             <Option value="Severe Efforts">
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <FireOutlined style={{ color: '#f5222d', marginRight: '8px' }} />
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <FireOutlined
+                  style={{ color: "#f5222d", marginRight: "8px" }}
+                />
                 Severe Efforts
               </div>
             </Option>
             <Option value="Maximal Efforts">
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <FireOutlined style={{ color: '#722ed1', marginRight: '8px' }} />
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <FireOutlined
+                  style={{ color: "#722ed1", marginRight: "8px" }}
+                />
                 Maximal Efforts
               </div>
             </Option>
           </Select>
         </Form.Item>
-        
+
         <Form.Item label="Description" name="description">
           <Input.TextArea
             placeholder="Description"
@@ -319,7 +342,7 @@ const CreateStoryModal = () => {
             rows={4}
           />
         </Form.Item>
-        
+
         {imageUploading ? (
           <p>Image is uploading</p>
         ) : (
@@ -329,10 +352,10 @@ const CreateStoryModal = () => {
             showUploadList={false}
             beforeUpload={() => false}
           >
-            <Button 
-              icon={<UploadOutlined />} 
+            <Button
+              icon={<UploadOutlined />}
               type="dashed"
-              style={{ width: '100%' }}
+              style={{ width: "100%" }}
             >
               Upload Image
             </Button>
