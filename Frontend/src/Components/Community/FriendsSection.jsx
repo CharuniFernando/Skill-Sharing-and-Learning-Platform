@@ -58,7 +58,7 @@ const FriendsSection = () => {
         dataSource={friends}
         renderItem={(friend) => (
           <Card
-            style={{ background: "#f5d0f3", color: "white" }}
+            style={{ background: "#afdae0", color: "white" }}
             bordered={false}
             key={friend.id}
           >
@@ -74,13 +74,13 @@ const FriendsSection = () => {
               ]}
             >
               <List.Item.Meta
-                style={{ color: "white", fontSize: "16px" }}
+                style={{ color: "black", fontSize: "16px" }}
                 avatar={<Avatar src={friend.image} size={64} />}
                 title={
-                  <span style={{ color: "white" }}>{friend.username}</span>
+                  <span style={{ color: "black" }}>{friend.username}</span>
                 }
                 description={
-                  <span style={{ color: "white" }}>{friend.biography}</span>
+                  <span style={{ color: "black" }}>{friend.biography}</span>
                 }
               />
             </List.Item>
