@@ -189,30 +189,37 @@ const AuthModal = ({ isOpen, onClose }) => {
             >
               <Form.Item
                 name="email"
-                rules={[{ required: true, message: "Please input your username or email!" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your username or email!",
+                  },
+                ]}
               >
-                <Input 
-                  prefix={<UserOutlined style={{ color: "#bfbfbf" }} />} 
-                  placeholder="Username or Email" 
+                <Input
+                  prefix={<UserOutlined style={{ color: "#bfbfbf" }} />}
+                  placeholder="Username or Email"
                   size="large"
                 />
               </Form.Item>
 
               <Form.Item
                 name="password"
-                rules={[{ required: true, message: "Please input your password!" }]}
+                rules={[
+                  { required: true, message: "Please input your password!" },
+                ]}
               >
-                <Input.Password 
-                  prefix={<LockOutlined style={{ color: "#bfbfbf" }} />} 
-                  placeholder="Password" 
+                <Input.Password
+                  prefix={<LockOutlined style={{ color: "#bfbfbf" }} />}
+                  placeholder="Password"
                   size="large"
                 />
               </Form.Item>
 
               <Form.Item>
-                <Button 
-                  type="primary" 
-                  htmlType="submit" 
+                <Button
+                  type="primary"
+                  htmlType="submit"
                   loading={isLoading}
                   block
                   size="large"
@@ -221,20 +228,20 @@ const AuthModal = ({ isOpen, onClose }) => {
                   Sign In
                 </Button>
               </Form.Item>
-              
+
               <Divider plain>or continue with</Divider>
-              
+
               <div style={buttonContainerStyle}>
-                <Button 
-                  icon={<GoogleOutlined />} 
+                <Button
+                  icon={<GoogleOutlined />}
                   size="large"
                   onClick={() => handleOAuthLogin("Google")}
                   style={socialButtonStyle}
                 >
                   Google
                 </Button>
-                <Button 
-                  icon={<GithubOutlined />} 
+                <Button
+                  icon={<GithubOutlined />}
                   size="large"
                   onClick={() => handleOAuthLogin("GitHub")}
                   style={socialButtonStyle}
@@ -242,12 +249,12 @@ const AuthModal = ({ isOpen, onClose }) => {
                   GitHub
                 </Button>
               </div>
-              
+
               <div style={footerTextStyle}>
                 <Text type="secondary">
                   Don't have an account?{" "}
-                  <Button 
-                    type="link" 
+                  <Button
+                    type="link"
                     onClick={() => setActiveTab("signup")}
                     style={{ padding: 0 }}
                   >
@@ -271,11 +278,13 @@ const AuthModal = ({ isOpen, onClose }) => {
             >
               <Form.Item
                 name="username"
-                rules={[{ required: true, message: "Please input your username!" }]}
+                rules={[
+                  { required: true, message: "Please input your username!" },
+                ]}
               >
-                <Input 
-                  prefix={<UserOutlined style={{ color: "#bfbfbf" }} />} 
-                  placeholder="Username" 
+                <Input
+                  prefix={<UserOutlined style={{ color: "#bfbfbf" }} />}
+                  placeholder="Username"
                   size="large"
                 />
               </Form.Item>
@@ -284,23 +293,36 @@ const AuthModal = ({ isOpen, onClose }) => {
                 name="email"
                 rules={[
                   { required: true, message: "Please input your email!" },
-                  { type: "email", message: "Please enter a valid email!" }
+                  { type: "email", message: "Please enter a valid email!" },
                 ]}
               >
-                <Input 
-                  prefix={<MailOutlined style={{ color: "#bfbfbf" }} />} 
-                  placeholder="Email" 
+                <Input
+                  prefix={<MailOutlined style={{ color: "#bfbfbf" }} />}
+                  placeholder="Email"
                   size="large"
                 />
               </Form.Item>
 
               <Form.Item
                 name="password"
-                rules={[{ required: true, message: "Please input your password!" }]}
+                rules={[
+                  { required: true, message: "Please input your password!" },
+                  {
+                    min: 8,
+                    message: "Password must be at least 8 characters long",
+                  },
+                  {
+                    pattern:
+                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/,
+                    message:
+                      "Password must include uppercase, lowercase, number, and special character",
+                  },
+                ]}
+                hasFeedback
               >
-                <Input.Password 
-                  prefix={<LockOutlined style={{ color: "#bfbfbf" }} />} 
-                  placeholder="Password" 
+                <Input.Password
+                  prefix={<LockOutlined style={{ color: "#bfbfbf" }} />}
+                  placeholder="Password"
                   size="large"
                 />
               </Form.Item>
@@ -316,36 +338,42 @@ const AuthModal = ({ isOpen, onClose }) => {
                       if (!value || getFieldValue("password") === value) {
                         return Promise.resolve();
                       }
-                      return Promise.reject(new Error("The passwords don't match!"));
+                      return Promise.reject(
+                        new Error("The passwords don't match!")
+                      );
                     },
                   }),
                 ]}
               >
-                <Input.Password 
-                  prefix={<LockOutlined style={{ color: "#bfbfbf" }} />} 
-                  placeholder="Confirm Password" 
+                <Input.Password
+                  prefix={<LockOutlined style={{ color: "#bfbfbf" }} />}
+                  placeholder="Confirm Password"
                   size="large"
                 />
               </Form.Item>
 
               <Form.Item
                 name="biography"
-                rules={[{ required: true, message: "Please input your biography!" }]}
+                rules={[
+                  { required: true, message: "Please input your biography!" },
+                ]}
               >
-                <Input 
-                  prefix={<ProfileOutlined style={{ color: "#bfbfbf" }} />} 
-                  placeholder="Biography" 
+                <Input
+                  prefix={<ProfileOutlined style={{ color: "#bfbfbf" }} />}
+                  placeholder="Biography"
                   size="large"
                 />
               </Form.Item>
 
               <Form.Item
                 name="fitnessGoals"
-                rules={[{ required: true, message: "Please input your skill goals!" }]}
+                rules={[
+                  { required: true, message: "Please input your skill goals!" },
+                ]}
               >
-                <Input 
-                  prefix={<AimOutlined style={{ color: "#bfbfbf" }} />} 
-                  placeholder="Skill Goals" 
+                <Input
+                  prefix={<AimOutlined style={{ color: "#bfbfbf" }} />}
+                  placeholder="Skill Goals"
                   size="large"
                 />
               </Form.Item>
@@ -355,8 +383,8 @@ const AuthModal = ({ isOpen, onClose }) => {
                 valuePropName="fileList"
                 getValueFromEvent={normFile}
               >
-                <Upload.Dragger 
-                  beforeUpload={() => false} 
+                <Upload.Dragger
+                  beforeUpload={() => false}
                   multiple={false}
                   maxCount={1}
                   listType="picture"
@@ -373,9 +401,9 @@ const AuthModal = ({ isOpen, onClose }) => {
               </Form.Item>
 
               <Form.Item>
-                <Button 
-                  type="primary" 
-                  htmlType="submit" 
+                <Button
+                  type="primary"
+                  htmlType="submit"
                   loading={isLoading}
                   block
                   size="large"
@@ -384,20 +412,20 @@ const AuthModal = ({ isOpen, onClose }) => {
                   Create Account
                 </Button>
               </Form.Item>
-              
+
               <Divider plain>or sign up with</Divider>
-              
+
               <div style={buttonContainerStyle}>
-                <Button 
-                  icon={<GoogleOutlined />} 
+                <Button
+                  icon={<GoogleOutlined />}
                   size="large"
                   onClick={() => handleOAuthLogin("Google")}
                   style={socialButtonStyle}
                 >
                   Google
                 </Button>
-                <Button 
-                  icon={<GithubOutlined />} 
+                <Button
+                  icon={<GithubOutlined />}
                   size="large"
                   onClick={() => handleOAuthLogin("GitHub")}
                   style={socialButtonStyle}
@@ -405,12 +433,12 @@ const AuthModal = ({ isOpen, onClose }) => {
                   GitHub
                 </Button>
               </div>
-              
+
               <div style={footerTextStyle}>
                 <Text type="secondary">
                   Already have an account?{" "}
-                  <Button 
-                    type="link" 
+                  <Button
+                    type="link"
                     onClick={() => setActiveTab("signin")}
                     style={{ padding: 0 }}
                   >
